@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <title>授業場所検索Chatbot</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 16px 32px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+
+    #output p {
+      font-size: 16px;
+    }
+
+    #output strong {
+      color: #0066cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>授業場所検索Chatbot</h1>
+  <input type="text" id="input" placeholder="授業名やキーワードを入力してください">
+  <button onclick="searchClassroom()">検索</button>
+  <button onclick="searchTodayAM()">今前</button>
+  <button onclick="searchTodayPM()">今後</button>
+  <div id="output"></div>
+  <div id="week"></div>
+
+  <script>
+  // ダミーのデータを作成（授業名と対応する教室のリスト）
+  const classroomData = {
+    '月午前': '上流工程教室508',
+    '月午後': 'ゼミ教室509',
+    '火午前': 'オンライン',
+    '火午後': 'オンライン',
+　　'水午前': '電子回路教室402B',
+　　'水午後': 'ゼミ教室608',
+　　'木午前': 'オンライン',
+　　'木午後': 'オンライン',
+　　'金午前': 'MOS教室602',
+　　'金午後': '実践AIプログラミング教室606',
+  　'金6': 'ゼミ教室608',
+    '上流工程': '上流工程教室508',
+    'ゼミ': '509,608',
+    '電子回路': '402B',
+    'mos': '602',
+    '実践AI': '606',
+    // 他の授業名と対応する教室を追加
+  };
+
+  function searchTodayAM(){
+    var date=new Date();
+    var dayOfWeek = date.getDay() ;
+    if(dayOfWeek==0){
+      week.innerHTML='<p>日曜日はお休みです。</p>';
+    }else if(dayOfWeek==1){
+      week.innerHTML='<p>上流工程エンジニア技術の教室は<strong>508</strong></p>';
+    }else if(dayOfWeek==2){
+      week.innerHTML='<p>テストとソフトウェア品質管理は<strong>オンライン</strong></p>';
+    }else if(dayOfWeek==3){
+      week.innerHTML='<p>電気電子回路組み込み実習の教室は<strong>402</strong></p>';
+    }else if(dayOfWeek==4){
+      week.innerHTML='<p>C言語演習(基礎)は<strong>オンライン</strong></p>';
+    }else if(dayOfWeek==5){
+      week.innerHTML='<p>MOS-Excelエキスパート対策講座の教室は<strong>602</strong></p>';
+    }else if(dayOfWeek==6){
+      week.innerHTML='<p>土曜日はお休みです。</p>';
+    }
+  }
+
+  function searchTodayPM(){
+    var date=new Date();
+    var dayOfWeek = date.getDay() ;
+    if(dayOfWeek==0){
+      week.innerHTML='<p>日曜日はお休みです。</p>';
+    }else if(dayOfWeek==1){
+      week.innerHTML='<p>ゼミ前期の教室は<strong>509</strong></p>';
+    }else if(dayOfWeek==2){
+      week.innerHTML='<p>RPAによるソフトウェア構造化設計は<strong>オンライン</strong></p>';
+    }else if(dayOfWeek==3){
+      week.innerHTML='<p>ゼミの教室は<strong>608</strong></p>';
+    }else if(dayOfWeek==4){
+      week.innerHTML='<p>Pythonによる数理モデリングは<strong>オンライン</strong></p>';
+    }else if(dayOfWeek==5){
+      week.innerHTML='<p>実践AIプログラミングの教室は<strong>602</strong></p>';
+    }else if(dayOfWeek==6){
+      week.innerHTML='<p>土曜日はお休みです。</p>';
+    }
+  }
+
+  function searchClassroom() {
+    const inputElement = document.getElementById('input');
+    const outputElement = document.getElementById('output');
+
+    const keyword = inputElement.value.trim();
+    const classroom = classroomData[keyword];
+
+    if (classroom) {
+      outputElement.innerHTML = `<p><strong>${keyword}</strong>の教室は<strong>${classroom}</strong>です。</p>`;
+    } else {
+      outputElement.innerHTML = `<p>該当する授業名やキーワードの教室は見つかりませんでした。</p>`;
+    }
+  }
+</script>
+</body>
+</html>
