@@ -1,0 +1,240 @@
+#define DoH 523
+#define ReH 587
+#define MiH 659
+#define FaH 698
+#define SoH 784
+#define LaH 880
+#define TiH 988
+
+#define DoM 262
+#define ReH 294
+#define MiH 330
+#define FaH 349
+#define SoH 392
+#define LaH 440
+#define TiH 494
+
+#define DoL 131
+#define ReL 147
+#define MiL 165
+#define FaL 175
+#define SoL 196
+#define LaL 220
+#define TiL 247
+
+void setup() {
+}
+
+void loop() {
+  while(digitalRead(3)==HIGH){
+
+  }
+  tone(9,MiL,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,MiH,200);
+  delay(400);
+
+  tone(9,LaL,400);
+  delay(400);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,MiH,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,MiL,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,DoM,400);
+  delay(400);
+  tone(9,TiL,400);
+  delay(400);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,TiL,200);
+  delay(200);
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,FaH,200);
+  delay(400);
+
+  tone(9,MiH,200);
+  delay(400);
+
+  tone(9,LaL,400);
+  delay(400);
+  tone(9,MiH,400);
+  delay(400);
+  tone(9,LaL,400);
+  delay(400);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,MiH,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,MiL,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,DoM,400);
+  delay(400);
+  tone(9,TiL,400);
+  delay(400);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(400);
+
+  tone(9,DoM,400);
+  delay(400);
+  tone(9,LaL,400);
+  delay(600);
+
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,MiH,200);
+  delay(200);
+  tone(9,LaL,400);
+  delay(400);
+
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200); 
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,MiH,200);
+  delay(200);
+  tone(9,LaL,400);
+  delay(400);
+
+  tone(9,DoM,400);
+  delay(400);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,MiH,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,MiL,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,400);
+  delay(400);
+
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200); 
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,MiH,200);
+  delay(200);
+  tone(9,LaL,400);
+  delay(400);
+
+  tone(9,SoL,100);
+  delay(100);
+  tone(9,SoL,100);
+  delay(100);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,MiH,400);
+  delay(400);
+
+
+  tone(9,ReH,200);
+  delay(200);
+  tone(9,MiH,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,DoM,200);
+  delay(200);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,200);
+  delay(200);
+  tone(9,MiL,200);
+  delay(200);
+  tone(9,LaL,400);
+  delay(400);
+  tone(9,LaL,400);
+  delay(400);
+  tone(9,SoL,200);
+  delay(200);
+  tone(9,LaL,400);
+  delay(400);
+
+}
