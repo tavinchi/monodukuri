@@ -4,9 +4,9 @@
 #include <HTTPClient.h>
 //#define led 12  //テスト
 
-const char* ssid = "JCOM_ISEJ";
-const char* pwwd = "170617282143";
-String host = "https://script.google.com/macros/s/AKfycbyl4J11SWIYPeaWTZv29THqvC6WX33IIZ-Oq0UY4rImVxqZQbQ7bE_vUZ78rPkJzTz5VA/exec";
+const char* ssid = "*****";
+const char* pwwd = "*****";
+String host = "GASのデプロイ先";
 int count = 0;
 int SW=1;
 bool flg=false;
