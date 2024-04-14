@@ -88,23 +88,34 @@ void car() {
   html += "<head>";
   html += "<title>ラジコン</title>";
   html +="<style>";
-  html +="h1,p{";
+  html +="h1{";
   html +="text-align:center;";
   html +="font-size: 50px;";
   html +="}";
+  html +="button{";
+  html +="margin: 20px; /* ボタンのマージン */";
+  html +="padding:40px 80px";
+  html +="margin: 20px; /* ボタンのマージン */";
+  html +="}";
+  html +="p{";
+  html +="text-align:center";
+  html +="}";
+  html +=".button-container {";
+  html +="display: flex; /* ボタンを水平に並べる */";
+  html+="justify-content: center; /* ボタンを中央揃え */";
+  html+="align-items: center; /* ボタンを垂直方向に中央揃え */";
+  html+="margin-top: 20px; /* 上側のマージン */";
+  html+="}";
+  html+=".button-container a { margin: 0 10px; }";
   html+="</style>";
   html += "</head>";
   html += "<body>";
   html += "<h1>ラジコン</h1>";
-  html += "<p>";
-  html += "<a href=\"/?click=on\"><button>前</button></a>";   //パラメータの送信
-  html += "</p>";
-  html += "<p>";
-  html += "<a href=\"/?click=off\"><button>後</button></a>"; //パラメータの送信
-  html += "</p>";
-  html += "<p>";
-  html += "<a href=\"/?click=stop\"><button>止</button></a>"; //パラメータの送信
-  html += "</p>";
+  html +="<div class='button-container'>";
+  html += "<a href=\"/?click=on\"><button style='padding: 30px 60px;'>前</button></a>";   //パラメータの送信
+  html += "<a href=\"/?click=off\"><button style='padding: 30px 60px;'>後</button></a>"; //パラメータの送信
+  html += "<a href=\"/?click=stop\"><button style='padding: 30px 60px;'>止</button></a>"; //パラメータの送信
+  html += "</div>";
   html += "</body>";
   html += "</html>";
   html += "";
