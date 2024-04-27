@@ -92,30 +92,62 @@ void car() {
   html +="text-align:center;";
   html +="font-size: 50px;";
   html +="}";
+
   html +="button{";
   html +="margin: 20px; /* ボタンのマージン */";
   html +="padding:40px 80px";
   html +="margin: 20px; /* ボタンのマージン */";
   html +="}";
+
   html +="p{";
   html +="text-align:center";
   html +="}";
+
   html +=".button-container {";
   html +="display: flex; /* ボタンを水平に並べる */";
   html+="justify-content: center; /* ボタンを中央揃え */";
   html+="align-items: center; /* ボタンを垂直方向に中央揃え */";
   html+="margin-top: 20px; /* 上側のマージン */";
   html+="}";
+
   html+=".button-container a { margin: 0 10px; }";
+
+  html+=".button-container {";
+  html+="text-align: center;";
+  html+="margin-bottom: 20px;";
+  html+="}";
+
+  html+=".button-container button,";
+  html+=".button-above,";
+  html+=".button-below button {";
+  html+="margin: 0 10px;";
+  html+="font-size: 18px;";
+  html+="padding: 15px 30px;";
+  html+="}";
+
+  html+=".button-above {";
+  html+="display: block;";
+  html+="margin: 20px auto;";
+  html+="}";
+
+  html+=".button-below{";
+  html+="text-align:center;";
+  html+="}";
+
   html+="</style>";
   html += "</head>";
   html += "<body>";
   html += "<h1>ラジコン</h1>";
-  html +="<div class='button-container'>";
-  html += "<a href=\"/?click=on\"><button style='padding: 30px 60px;'>前</button></a>";   //パラメータの送信
-  html += "<a href=\"/?click=off\"><button style='padding: 30px 60px;'>後</button></a>"; //パラメータの送信
-  html += "<a href=\"/?click=stop\"><button style='padding: 30px 60px;'>止</button></a>"; //パラメータの送信
+  html += "<a href=\"/?click=forward\"><button class='button-above'>↑</button></a>";
+  html += "<div class='button-container'>";
+  html +=   "<a href=\"/?click=left\"><button>←</button></a>";
+  html +=   "<a href=\"/?click=stop\"><button>o</button></a>";
+  html +=   "<a href=\"/?click=right\"><button>→</button></a>";
   html += "</div>";
+  html += "<div class='button-below'>";
+  html +=   "<a href=\"/?click=back\"><button>↓</button></a>";
+  html += "</div>";
+
   html += "</body>";
   html += "</html>";
   html += "";
@@ -123,7 +155,7 @@ void car() {
   if (server.hasArg("click"))                      //clickが送信されたかどうかの確認
   {
     //前
-    if (server.arg("click").equals("on"))          
+    if (server.arg("click").equals("forward"))          
     {
       Serial.println("前");
       digitalWrite(motor1Pin1, LOW);
@@ -133,7 +165,7 @@ void car() {
       delay(700);
     }
     //後ろ
-    else if (server.arg("click").equals("off"))
+    else if (server.arg("click").equals("back"))
     {
       Serial.println("後");
       digitalWrite(motor1Pin1, HIGH);
@@ -148,6 +180,24 @@ void car() {
       Serial.println("止");
       digitalWrite(motor1Pin1, LOW);
       digitalWrite(motor1Pin2, LOW);
+      digitalWrite(motor2Pin1, LOW);
+      digitalWrite(motor2Pin2, LOW);
+      delay(700);
+    }
+    else if (server.arg("click").equals("right"))
+    {
+      Serial.println("右");
+      digitalWrite(motor1Pin1, LOW);
+      digitalWrite(motor1Pin2, LOW);
+      digitalWrite(motor2Pin1, LOW);
+      digitalWrite(motor2Pin2, HIGH);
+      delay(700);
+    }
+    else if (server.arg("click").equals("left"))
+    {
+      Serial.println("左");
+      digitalWrite(motor1Pin1, LOW);
+      digitalWrite(motor1Pin2, HIGH);
       digitalWrite(motor2Pin1, LOW);
       digitalWrite(motor2Pin2, LOW);
       delay(700);
